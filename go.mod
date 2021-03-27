@@ -1,4 +1,4 @@
-module github.com/trongtb88/ratesvc
+module github.com/trongtb88/rateservice
 
 
 go 1.15
