@@ -1,22 +1,15 @@
 module github.com/trongtb88/rateservice
 
-
 go 1.15
 
 require (
-	github.com/DATA-DOG/go-sqlmock v1.3.3
 	github.com/badoux/checkmail v0.0.0-20181210160741-9661bd69e9ad
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
-	github.com/go-sql-driver/mysql v1.4.1
-	github.com/go-test/deep v1.0.2
-	github.com/gorilla/handlers v1.4.2
+	github.com/gorilla/context v1.1.1 // indirect
 	github.com/gorilla/mux v1.6.2
-	github.com/jinzhu/gorm v1.9.10
+	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.3.0
-	github.com/kr/pretty v0.1.0 // indirect
-	github.com/satori/go.uuid v1.2.0
-	github.com/stretchr/testify v1.2.2
-	golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4
-	gopkg.in/go-playground/assert.v1 v1.2.1
+	github.com/mattn/go-sqlite3 v1.14.5 // indirect
+	golang.org/x/crypto v0.0.0-20191205180655-e7c4368fe9dd
+	gorm.io/driver/mysql v1.0.5
+	gorm.io/gorm v1.21.6
 )
-
