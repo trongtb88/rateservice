@@ -2,6 +2,7 @@ package parser
 
 import (
 	"encoding/xml"
+	"github.com/trongtb88/rateservice/api/constants"
 	"github.com/trongtb88/rateservice/api/models"
 	"io/ioutil"
 	"log"
@@ -61,14 +62,11 @@ func GetCurrencyRates(xmlBytes [] byte) ([]models.CurrencyRate, error){
 	}
 	log.Print("Parsing done")
 	var result []models.CurrencyRate
-	const (
-		layoutISO = "2006-01-02"
-	)
 	log.Print(len(resultXML.Body.CubeTypes))
 
 	for _, cube := range resultXML.Body.CubeTypes {
 		for _, cubeDetail := range cube.DetailCubeType {
-			exchangeDate, err := time.Parse( layoutISO, cube.Time)
+			exchangeDate, err := time.Parse( constants.LayoutISO, cube.Time)
 			if err != nil {
 				log.Println("Can not convert from string to date, invalid datetime format ", err)
 				return nil, err

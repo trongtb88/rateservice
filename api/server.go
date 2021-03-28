@@ -2,7 +2,7 @@ package api
 
 import (
 	"fmt"
-	"gorm.io/gorm"
+	"github.com/trongtb88/rateservice/api/controllers"
 	"log"
 	"net/http"
 	"os"
@@ -14,12 +14,9 @@ import (
 )
 
 
-type Server struct {
-	DB     *gorm.DB
-	Router *mux.Router
-}
 
-var server = Server{}
+
+var server = controllers.Server{}
 
 
 func init() {
@@ -50,7 +47,7 @@ func Run() {
 
 	server.Router = mux.NewRouter()
 
-	server.initializeRoutes()
+	server.InitializeRoutes()
 
 	log.Fatal(http.ListenAndServe(":8686", server.Router))
 }
