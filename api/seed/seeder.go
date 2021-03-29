@@ -1,6 +1,7 @@
 package seed
 
 import (
+	"github.com/trongtb88/rateservice/api/constants"
 	"log"
 
 	"github.com/trongtb88/rateservice/api/models"
@@ -11,7 +12,7 @@ import (
 
 func Load(db *gorm.DB) {
 	log.Print("Reading xml file")
-	xmlByte, err := parser.GetXML("https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml")
+	xmlByte, err := parser.GetXML(constants.XML_URL)
 	if err != nil {
 		log.Fatalf("Can not read data from xml url")
 	}

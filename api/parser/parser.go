@@ -62,7 +62,6 @@ func GetCurrencyRates(xmlBytes [] byte) ([]models.CurrencyRate, error){
 	}
 	log.Print("Parsing done")
 	var result []models.CurrencyRate
-	log.Print(len(resultXML.Body.CubeTypes))
 
 	for _, cube := range resultXML.Body.CubeTypes {
 		for _, cubeDetail := range cube.DetailCubeType {

@@ -107,8 +107,6 @@ func (server * Server) GetRateSpecificDate(w http.ResponseWriter, r *http.Reques
 }
 
 func (server * Server) AnalyzeRates(w http.ResponseWriter, r *http.Request) {
-	log.Println("go here 1")
-
 	var analyzedCurrencyRates [] AnalyzedCurrencyRate
 	err := server.DB.Raw("select currency_code, max(rate) as 'max_rate', min(rate) as 'min_rate', avg(rate) as 'avg_rate' " +
 		" from currency_rates group by currency_code ").Scan(&analyzedCurrencyRates).Error
@@ -117,20 +115,19 @@ func (server * Server) AnalyzeRates(w http.ResponseWriter, r *http.Request) {
 		responses.ERROR(w, http.StatusInternalServerError, err)
 		return
 	}
-	log.Println("go here 2")
-	ms := lib.MapSlice{
+
+	ms := lib.MapSlice{}
+	for _, analyzedCurrencyRates :=  range analyzedCurrencyRates {
+		mapItem :=  lib.MapItem{
+			Key: analyzedCurrencyRates.CurrencyCode,
+			Value:  AnalyzedDetailCurrencyRate{
+				MinRate: analyzedCurrencyRates.MinRate,
+				MaxRate: analyzedCurrencyRates.MaxRate,
+				AvgRate: analyzedCurrencyRates.AvgRate,
+			},
+		}
+		ms = append(ms, mapItem)
 	}
-	//for _, analyzedCurrencyRates :=  range analyzedCurrencyRates {
-	//	mapItem :=  lib.MapItem{
-	//		Key: analyzedCurrencyRates.CurrencyCode,
-	//		Value:  AnalyzedDetailCurrencyRate{
-	//			MinRate: analyzedCurrencyRates.MinRate,
-	//			MaxRate: analyzedCurrencyRates.MaxRate,
-	//			AvgRate: analyzedCurrencyRates.AvgRate,
-	//		},
-	//	}
-	//	ms = append(ms, mapItem)
-	//}
 
 	var rateResp = RateResonse{
 		Base: "EUR",

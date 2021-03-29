@@ -30,6 +30,7 @@ func Initialize(Dbdriver, DbUser, DbPassword, DbPort, DbHost, DbName string) *go
 			fmt.Printf("We are connected to the %s database", Dbdriver)
 		}
 	}
+
 	err = db.Debug().AutoMigrate(&models.CurrencyRate{}) //database migration
 	if err != nil {
 		log.Fatal("Error when migration table:", err)
