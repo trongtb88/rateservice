@@ -12,7 +12,7 @@ The service for currency rate management in Golang
    go run main.go
 ```
 
-6. If have some logs at console like, server started and workded successfully
+6. If have some logs at console like, server started and worked successfully
 
 ```sh
 2021/03/29 00:20:32 Listening to port 8687
