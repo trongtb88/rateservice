@@ -4,8 +4,8 @@ The service for currency rate management in Golang
 ## How to run this service at localhost
 1. Start your mysql at your localhost machine successfully
 2. Git clone this repo
-3. Change file .env which is mapped with your config (DB_USER, DB_PASSWORD, DB_HOST), please note commment DB_HOST at docker, uncomment using 127.0.0.1
-4. Create database rate_db by yourself
+3. Change file .env which is mapped with your config (DB_USER, DB_PASSWORD, DB_HOST), please note commment DB_HOST at docker, uncomment DB_HOST using 127.0.0.1
+4. Create database ***rate_db*** by yourself
 5.  Go to terminal at root of project
 ```sh
    go get .    
@@ -71,7 +71,7 @@ rate_app      | 2021/03/29 00:20:52 200
 1. Start your mysql at your localhost machine successfully
 2. Git clone this repo
 3. Change values config at .env which is mapped with your config (TEST_DB_USER, TEST_DB_PASSWORD, TEST_DB_HOST), please note commment DB_HOST at docker, uncomment using 127.0.0.1
-4. Create database test_rate_db by yourself
+4. Create database ***test_rate_db*** by yourself
 5.  Go to terminal at root of project
 ```sh
    cd tests
