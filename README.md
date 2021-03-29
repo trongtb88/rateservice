@@ -36,7 +36,7 @@ The service for currency rate management in Golang
    docker-composer up --build 
 ```
 
-6. If have some logs at console like, server started and workded successfully
+6. If have some logs at console like, server started and worked successfully
 
 ```sh
 rate_db_mysql | 2021-03-29T00:16:59.979485Z 0 [Note]   - '::' resolves to '::';
