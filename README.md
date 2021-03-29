@@ -30,7 +30,7 @@ The service for currency rate management in Golang
 2. Make sure don't have any image mysql is running at port 3306, otherwise you will have 1 error
 3. Make sure don't have any image is running at port 8687, otherwise you will have 1 error
 2. Git clone this repo
-3. Change file .env which is mapped with your config (DB_USER, DB_PASSWORD, DB_HOST), please note uncommment DB_HOST at docker, comment using 127.0.0.1
+3. Change values config at file .env which is mapped with your config (DB_USER, DB_PASSWORD, DB_HOST), please note uncommment DB_HOST at docker, comment using 127.0.0.1
 5.  Go to terminal at root of project
 ```sh
    docker-composer up --build 
@@ -70,7 +70,7 @@ rate_app      | 2021/03/29 00:20:52 200
 
 1. Start your mysql at your localhost machine successfully
 2. Git clone this repo
-3. Change file .env which is mapped with your config (TEST_DB_USER, TEST_DB_PASSWORD, TEST_DB_HOST), please note commment DB_HOST at docker, uncomment using 127.0.0.1
+3. Change values config at .env which is mapped with your config (TEST_DB_USER, TEST_DB_PASSWORD, TEST_DB_HOST), please note commment DB_HOST at docker, uncomment using 127.0.0.1
 4. Create database test_rate_db by yourself
 5.  Go to terminal at root of project
 ```sh
